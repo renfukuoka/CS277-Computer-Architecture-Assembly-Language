@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/renfukuoka/Desktop/L&C/First Year/CS/CS 277/CS277-Computer-Architecture-Assembly-Language/HW 1/hwtesting'
+relocations:     []
+...
