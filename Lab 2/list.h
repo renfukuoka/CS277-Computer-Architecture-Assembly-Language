@@ -3,7 +3,8 @@
 // Forward declaration; definition hidden in list.c.
 struct node;
 
-struct list {
+struct list
+{
     int size;
     struct node *head;
     struct node *tail;
@@ -13,7 +14,7 @@ struct list {
  * Create a new empty list.
  * @return a new empty list.
  */
-struct list *new();
+struct list *new ();
 
 /**
  * Destroy an existing list.

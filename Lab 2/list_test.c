@@ -3,20 +3,24 @@
 
 #include "list.h"
 
-void die(char *msg) {
+void die(char *msg)
+{
     puts(msg);
     exit(1);
 }
 
-void assert_equals(long expected, long actual, char *what) {
-    if (expected != actual) {
+void assert_equals(long expected, long actual, char *what)
+{
+    if (expected != actual)
+    {
         char msg[256];
         snprintf(msg, 256, "%s: expected %ld but got %ld", what, expected, actual);
         die(msg);
     }
 }
 
-void is_initially_empty() {
+void is_initially_empty()
+{
     printf("is_initially_empty: ");
     struct list *l = new();
     assert_equals(0, size(l), "A new list should be initially empty");
@@ -24,7 +28,8 @@ void is_initially_empty() {
     printf("pass\n");
 }
 
-void test_add() {
+void test_add()
+{
     printf("adds: ");
     struct list *l = new();
     add_tail(l, 0);
@@ -35,7 +40,8 @@ void test_add() {
     printf("pass\n");
 }
 
-void test_get() {
+void test_get()
+{
     printf("gets: ");
     struct list *l = new();
     add_tail(l, 0);
@@ -49,7 +55,8 @@ void test_get() {
     printf("pass\n");
 }
 
-void test_remove() {
+void test_remove()
+{
     printf("removes: ");
     struct list *l = new();
     add_tail(l, 0);
@@ -66,7 +73,8 @@ void test_remove() {
     printf("pass\n");
 }
 
-void test_multiple_lists() {
+void test_multiple_lists()
+{
     printf("multiple lists: ");
     struct list *l1 = new();
     add_tail(l1, 0);
@@ -81,7 +89,8 @@ void test_multiple_lists() {
     printf("pass\n");
 }
 
-int main() {
+int main()
+{
     is_initially_empty();
     test_add();
     test_get();
