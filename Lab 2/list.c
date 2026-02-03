@@ -79,8 +79,31 @@ long remove_at(struct list *l, int index)
     struct node *cur = l->head;
     for (int i = 0; i < index; i++)
     {
+        cur = cur->next;
     }
-    return 0;
+
+    long val = cur->val;
+
+    if (cur->prev != NULL)
+    {
+        cur->prev->next = cur->next;
+    }
+    else
+    {
+        l->head = cur->next;
+    }
+
+    if (cur->next != NULL)
+    {
+        cur->next->prev = cur->prev;
+    }
+    else
+    {
+        l->tail = cur->prev;
+    }
+    free(cur);
+    l->size--;
+    return val;
 }
 
 long get(struct list *l, int index)
