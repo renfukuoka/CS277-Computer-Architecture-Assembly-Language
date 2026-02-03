@@ -19,7 +19,7 @@ void panic(char *s)
 
 struct list *new()
 {
-    struct list *lst = (struct list *)malloc(sizeof(struct node));
+    struct list *lst = malloc(sizeof(struct node));
     if (lst == NULL)
     {
         panic("Out of memory!");
@@ -65,23 +65,31 @@ void add_tail(struct list *l, long val)
     {
         l->tail->next = n;
     }
-    l->tail = n;
-
-    if (l->head != NULL)
+    else
     {
         l->head = n;
     }
-
+    l->tail = n;
     l->size++;
 }
 
 long remove_at(struct list *l, int index)
 {
     assert(l != NULL && index >= 0 && index < l->size);
+    struct node *cur = l->head;
+    for (int i = 0; i < index; i++)
+    {
+    }
+    return 0;
 }
 
 long get(struct list *l, int index)
 {
     assert(l != NULL && index >= 0 && index < l->size);
-    return 0;
+    struct node *cur = l->head;
+    for (int i = 0; i < index; i++)
+    {
+        cur = cur->next;
+    }
+    return cur->val;
 }
