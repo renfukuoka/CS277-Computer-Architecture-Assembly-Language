@@ -90,7 +90,7 @@ int bit_count(int x)
     int stage2 = (stage1 & s2m32) + ((stage1 >> 2) & s2m32);
     int stage3 = (stage2 & s3m32) + ((stage2 >> 4) & s3m32);
     int stage4 = (stage3 & s4m32) + ((stage3 >> 8) & s4m32);
-    int stage5 = (stage4 & s4m32) + ((stage4 >> 16 & s4m32));
+    int stage5 = (stage4 & s4m32) + ((stage4 >> 16) & s4m32);
 
     return stage5;
 }
